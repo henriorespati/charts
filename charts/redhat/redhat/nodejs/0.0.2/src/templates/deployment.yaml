@@ -33,7 +33,7 @@ spec:
 {{- end }}
       containers:
         - name: web
-          image: {{ include "nodejs.imageName" . }}
+          image: image-registry.openshift-image-registry.svc:5000/nodejs-argocd/{{ include "nodejs.imageName" . }}
           ports:
 {{- range .Values.deploy.ports }}
             - name: {{ .name }}
