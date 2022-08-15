@@ -32,7 +32,7 @@ spec:
   output:
     to:
       kind: {{ .Values.build.output.kind }}
-      name: {{ include "nodejs.imageName" . }}
+      name: {{ include "nodejs.name" . }}
   {{- if and (eq .Values.build.output.kind "DockerImage") .Values.build.output.pushSecret }}
     pushSecret:
       name: {{ .Values.build.output.pushSecret }}
