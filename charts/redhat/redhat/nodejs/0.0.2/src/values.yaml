@@ -3,7 +3,7 @@ image:
   ## Defaults to the release name
   name:
   ## Tag that you want to build/deploy
-  tag: new
+  tag: latest
 
 ## Build-specific values (for configuring BuildConfig and ImageStream)
 build:
