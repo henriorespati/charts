@@ -148,8 +148,10 @@ global:
   ## Override the release name
   nameOverride:
 
+## Do NOT push the password value to the git repo
+## helm template -s templates/secret.yaml .
 imageCredentials:
   registry: quay.io
-  username: someone
-  password: sillyness
-  email: someone@host.com
+  username: hrespati@redhat.com
+  password: 
+  
