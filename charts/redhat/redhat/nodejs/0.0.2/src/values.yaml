@@ -149,9 +149,19 @@ global:
   nameOverride:
 
 ## Do NOT push the password value to the git repo
-## helm template -s templates/secret.yaml .
+## To update the password, follow these steps:
+## - Comment this line: "template/secret.yaml" in the .helmignore file
+## - Type the password below, then run below commands to generate the sealed secret 
+## - Don't forget to remove the password and the generated secret.yaml file
+## - Then you can push the sealed secret yaml to the git repo
+## Commands:
+# helm template -s templates/secret.yaml . > secret.yaml
+# cat secret.yaml | kubeseal \
+#   --controller-namespace kube-system \
+#   --controller-name sealed-secrets-controller \
+#   --format yaml > templates/sealed-secret.yaml
+# rm secret.yaml
 imageCredentials:
   registry: quay.io
   username: hrespati@redhat.com
   password: 
-  
