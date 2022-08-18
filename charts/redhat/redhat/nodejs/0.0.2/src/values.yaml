@@ -147,3 +147,9 @@ deploy:
 global:
   ## Override the release name
   nameOverride:
+
+imageCredentials:
+  registry: quay.io
+  username: someone
+  password: sillyness
+  email: someone@host.com
